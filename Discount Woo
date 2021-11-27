@@ -1,0 +1,9 @@
+function filter_woocommerce_get_discounted_price( $price, $values, $instance ) { 
+    //$price represents the current product price without discount
+    //$values represents the product object
+    //$instance represent the cart object 
+    $discount = ($price * 10) /100;    // add custom discount rule , This is just an example
+
+    return ($price - $discount); 
+    }; 
+     add_filter('woocommerce_get_discounted_price','filter_woocommerce_get_discounted_price', 10, 3 );
